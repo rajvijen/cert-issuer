@@ -5,20 +5,22 @@ COPY . /cert-issuer
 COPY conf_regtest.ini /etc/cert-issuer/conf.ini
 
 RUN apk add --update \
-        bash \
-        ca-certificates \
-        curl \
-        gcc \
-        gmp-dev \
-        libffi-dev \
-        libressl-dev \
-        linux-headers \
-        make \
-        musl-dev \
-        python \
-        python3 \
-        python3-dev \
-        tar \
+    libxml2-dev \
+    libxslt-dev \
+    bash \
+    ca-certificates \
+    curl \
+    gcc \
+    gmp-dev \
+    libffi-dev \
+    libressl-dev \
+    linux-headers \
+    make \
+    musl-dev \
+    python \
+    python3 \
+    python3-dev \
+    tar \
     && python3 -m ensurepip \
     && pip3 install --upgrade pip setuptools \
     && mkdir -p /etc/cert-issuer/data/unsigned_certificates \
